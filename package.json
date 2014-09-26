@@ -1,0 +1,13 @@
+{
+	"name": "ThreadSwap",
+	"version": "0.0.0",
+	"private": true,
+	"main": "server.js",
+	"dependencies": {
+	    "express": "~4.9.0",
+    	"body-parser": "~1.8.1",
+		"method-override" : "~2.2.0",
+		"mongodb":"*",
+    	"monk":"*"	    
+	}
+}
