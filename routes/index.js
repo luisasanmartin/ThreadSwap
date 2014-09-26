@@ -1,6 +1,6 @@
-module.exports = function(app, db) {
+module.exports = function(app, db, express) {
 
-	//var router = app.Router();
+	var router = express.Router();
 	var dbCollection = "swapcollection";
 	/* GET home page. */
 	app.get('/', function(req, res) {
@@ -32,10 +32,13 @@ module.exports = function(app, db) {
 		console.log("GETBYID bottom");
 	});
 
-	app.post('/swaps', function(req, res) {
+	router.post('/swaps', function(req, res) {
 		console.log("POST");
-		console.dir(req.headers+"  req headers");
-		console.dir(req.body + "   req body");
+		res.send("End");
+		console.log("POST bottom"); /*
+		console.log(req);
+		console.dir(req.headers);
+		console.dir(req.body);
 
 		var igLink = req.body.InstagramLink == null ? null : req.body.InstagramLink;
 		var swapObj = {
@@ -58,10 +61,10 @@ module.exports = function(app, db) {
 				res.send("There was a problem adding the information to the database");
 			}
 			else {
-				res.send(doc);
+				res.json(doc);
 			}
 		});
-		console.log("POST bottom");
+		console.log("POST bottom");*/
 	});
 
 	app.delete('/swaps/:swapid', function(req, res) {
